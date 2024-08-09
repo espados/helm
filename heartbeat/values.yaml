@@ -1,0 +1,29 @@
+image:
+  imagePath: https://index.docker.io/v1/
+  pullPolicy: Always
+  tag: dgfs-dcore-staging
+
+
+imagePullSecrets:
+  name: docker-hub-secrets
+  
+secret:
+  name: customer-env-secret
+
+pulse:
+  name: pulse
+  pullPolicy: Always
+  tag: dgfs-dcore-staging
+  cronSchedule: '*/1 * * * *'
+  env:
+    normal:
+      HEARTBEAT_LOGGER_CRON: '*/1 * * * *'
+      SPRING_DATASOURCE_URL: "postgresql+psycopg2://postgres:postgres@database:5432/heartbeats"
+      SPRING_LIQUIBASE_URL: "postgresql+psycopg2://postgres:postgres@database:5432/heartbeats"
+      SPRING_DATASOURCE_HIKARI_SCHEMA: 'heartbeats'
+      SPRING_LIQUIBASE_DEFAULT-SCHEMA: 'heartbeats'
+    secret:
+      SPRING_LIQUIBASE_USER: "postgres"
+      SPRING_LIQUIBASE_PASSWORD: "postgres"
+      SPRING_DATASOURCE_USERNAME: "postgres"
+      SPRING_DATASOURCE_PASSWORD: "postgres"
