@@ -2,6 +2,7 @@ image:
   imagePath: https://index.docker.io/v1/
   pullPolicy: Always
   tag: dgfs-dcore-staging
+  repository: espados/heartbeat
 
 
 imagePullSecrets:
