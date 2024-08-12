@@ -12,7 +12,7 @@ secret:
   name: customer-env-secret
 
 pulse:
-  name: pulse
+  name: pulse_customer
   pullPolicy: Always
   tag: dgfs-dcore-staging
   cronSchedule: '*/1 * * * *'
