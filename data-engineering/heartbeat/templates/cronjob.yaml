@@ -16,7 +16,7 @@ spec:
           {{- end }}
           containers:
             - name: heartbeat
-              image: "{{ .Values.image.imagePath }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+              image: espados/heartbeat
               imagePullPolicy: {{ .Values.image.pullPolicy }}
               env:
                 {{- include "service.listInitPulseEnvVariables" . | nindent 16 }}
