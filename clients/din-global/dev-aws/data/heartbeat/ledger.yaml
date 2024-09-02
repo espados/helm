@@ -5,7 +5,7 @@ imagePullSecrets:
   - name: docker-hub-secrets
 
 image:
-  imagePath: 187429986583.dkr.ecr.us-east-1.amazonaws.com/din-global/heartbeat2
+  imagePath: https://index.docker.io/v1/espados/heartbeat
   pullPolicy: Always
   tag: latest
 
@@ -22,19 +22,19 @@ secret:
 env:
   normal:
     LOGGING_LEVEL: INFO
-    DB_HOST: "db.internal.dbank:5432"
+    DB_HOST: "blah blah"
     DEFAULT_SCHEMA: 'ledger'
   secret:
-    DB_USER: "<path:ledger/din-global/dev/data/liquibase/creds#username>"
-    DB_PASSWORD: "<path:ledger/din-global/dev/data/liquibase/creds#password>"
+    DB_USER: "postgres"
+    DB_PASSWORD: "postgres"
 
 restartPolicy: onFailure
 
-nodeSelector:
-  dtools: "true"
+# nodeSelector:
+#   dtools: "true"
 
-tolerations:
-  - key: "dtools"
-    operator: "Equal"
-    value: "true"
-    effect: "NoSchedule"
+# tolerations:
+#   - key: "dtools"
+#     operator: "Equal"
+#     value: "true"
+#     effect: "NoSchedule"
