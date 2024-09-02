@@ -9,7 +9,7 @@ image:
   pullPolicy: Always
   tag: latest
 
-cronSchedule: '0 */15 * ? * *'
+cronSchedule: '*/1 * * * *'
 
 command:
   - python
@@ -28,7 +28,7 @@ env:
     DB_USER: "postgres"
     DB_PASSWORD: "postgres"
 
-restartPolicy: onFailure
+restartPolicy: OnFailure
 
 # nodeSelector:
 #   dtools: "true"
