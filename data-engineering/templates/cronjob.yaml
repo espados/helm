@@ -1,0 +1,35 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Values.name }}
+
+spec:
+  schedule: "{{ .Values.cronSchedule }}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          {{- with .Values.imagePullSecrets }}
+          imagePullSecrets:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          containers:
+            - name: heartbeat
+              image: "{{ .Values.image.imagePath }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
+              env:
+                {{- include "service.listInitPulseEnvVariables" . | nindent 16 }}
+              {{- with .Values.command }}
+              command:
+                {{- toYaml . | nindent 16}}
+              {{- end }}
+          restartPolicy: {{ .Values.restartPolicy }}
+          {{- with .Values.nodeSelector }}
+          nodeSelector:
+            {{ toYaml . | indent 12 }}
+          {{- end }}
+          {{- with .Values.tolerations }}
+          tolerations:
+            {{ toYaml . | indent 12 }}
+          {{- end }}
