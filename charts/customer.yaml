@@ -1,0 +1,40 @@
+name: customer-heartbeat-cronjob
+namespace: data-din-global
+
+imagePullSecrets:
+  - name: docker-hub-secrets
+
+image:
+  imagePath: https://index.docker.io/v1/espados/heartbeat
+  pullPolicy: Always
+  tag: latest
+
+cronSchedule: '*/1 * * * *'
+
+command:
+  - python
+  - -m
+  - heartbeat.main
+
+secret:
+  name: customer-heartbeat-secret
+
+env:
+  normal:
+    LOGGING_LEVEL: INFO
+    DB_HOST: "blah blah"
+    DEFAULT_SCHEMA: 'customer'
+  secret:
+    DB_USER: "postgres"
+    DB_PASSWORD: "postgres"
+
+restartPolicy: OnFailure
+
+# nodeSelector:
+#   dtools: "true"
+
+# tolerations:
+#   - key: "dtools"
+#     operator: "Equal"
+#     value: "true"
+#     effect: "NoSchedule"
