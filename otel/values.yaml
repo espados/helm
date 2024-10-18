@@ -123,10 +123,3 @@ opentelemetry-collector:
       annotations: {}
       name: "open-telemetry-collector"
 
-  nodeSelector:
-    obs-od: "true"
-  tolerations:
-    - key: "obs-od"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
