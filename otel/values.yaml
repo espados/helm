@@ -4,7 +4,7 @@ opentelemetry-collector:
     tag: "0.108.0"
   fullnameOverride: "otel-collector-opentelemetry-collector"
   mode: deployment
-  useGOMEMLIMIT: true
+  useGOMEMLIMIT: false
   config:
     extensions:
       zpages: { }
