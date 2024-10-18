@@ -7,7 +7,6 @@ opentelemetry-collector:
   useGOMEMLIMIT: true
   config:
     extensions:
-      zpages: { }
       health_check: { }
     exporters:
       otlp/2:
