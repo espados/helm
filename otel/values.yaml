@@ -24,7 +24,6 @@ opentelemetry-collector:
 
     service:
       extensions:
-        - zpages
         - health_check
       telemetry:
         logs:
