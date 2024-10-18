@@ -1,4 +1,4 @@
-opentelemetry-collector-contrib:
+opentelemetry-collector:
   image:
     repository: "otel/opentelemetry-collector-contrib"
     tag: "0.108.0"
