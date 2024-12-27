@@ -1,0 +1,11 @@
+---
+apiVersion: v2
+name: clickhouse
+description: Chart for ClickHouse
+type: application
+
+version: 7.1.0
+dependencies:
+  - name: clickhouse
+    version: 7.1.0
+    repository: https://charts.bitnami.com/bitnami
