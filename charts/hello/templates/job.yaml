@@ -9,6 +9,8 @@ metadata:
 spec:
   template:
     spec:
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecrets }}
       containers:
         - name: hello-world-job
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

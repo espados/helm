@@ -11,3 +11,4 @@ image:
   repository: "myrepo/hello-world"
   tag: "latest"
   pullPolicy: "Always"
+  pullSecrets: "dockercreds" 
