@@ -1,4 +1,6 @@
 # Default value for PRINT_MESSAGE
+
+name: hello
 job:
   message: "job"
 

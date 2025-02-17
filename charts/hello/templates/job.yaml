@@ -1,8 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  namespace: {{ .Values.namespace }}
-  name: {{ .Values.cdcMigrationsJob.name }}
+  name: {{ .Values.name }}
   annotations:
     helm.sh/hook: post-install, post-upgrade
     helm.sh/hook-weight: "0"
