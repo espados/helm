@@ -20,4 +20,4 @@ spec:
           imagePullPolicy: "{{ .Values.image.pullPolicy }}"
           env:
             - name: PRINT_MESSAGE
-              value: {{ .Values.deployment.message | default "deployment" }}
+              value: {{ .Values.deployment.message }}
