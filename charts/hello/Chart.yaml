@@ -1,0 +1,5 @@
+apiVersion: v2
+name: hello-world
+description: A test to run independent argocd job hooks
+version: 0.1.0
+appVersion: "1.0"

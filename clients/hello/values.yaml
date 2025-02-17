@@ -1,0 +1,10 @@
+# Default value for PRINT_MESSAGE
+job:
+  message: "job"
+
+deployment:
+  message: "deployment"
+
+image:
+  repository: "myrepo/hello-world"
+  tag: "latest"

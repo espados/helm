@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-hello-world
+  labels:
+    app: {{ .Release.Name }}-hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-hello-world
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-hello-world
+    spec:
+      containers:
+        - name: hello-world-deployment
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          env:
+            - name: PRINT_MESSAGE
+              value: {{ .Values.deployment.message | default "deployment" }}
