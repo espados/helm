@@ -17,6 +17,7 @@ spec:
       containers:
         - name: hello-world-deployment
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: "{{ .Values.image.pullPolicy }}"
           env:
             - name: PRINT_MESSAGE
               value: {{ .Values.deployment.message | default "deployment" }}
