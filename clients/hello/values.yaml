@@ -8,7 +8,6 @@ deployment:
   message: "deployment"
 
 image:
-  repository: "myrepo/hello-world"
+  repository: "espados/hello"
   tag: "latest"
   pullPolicy: "Always"
-  pullSecrets: "dockercreds" 
