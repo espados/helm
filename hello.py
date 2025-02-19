@@ -7,7 +7,7 @@ def main():
     if print_message == "deployment":
         i = 0
         while i == 0:
-            print("v5: This is the actual service deployment...")
+            print("v6: This is the actual service deployment...")
     elif print_message == "job":
         print("This is the post sync hook job...")
     else:
