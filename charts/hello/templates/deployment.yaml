@@ -21,5 +21,3 @@ spec:
           env:
             - name: PRINT_MESSAGE
               value: {{ .Values.deployment.message }}
-            - name: IDK_VAR
-              value: idk
