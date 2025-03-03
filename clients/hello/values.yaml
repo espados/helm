@@ -2,7 +2,7 @@
 
 name: hello
 job:
-  message: "error"
+  message: "job"
 
 deployment:
   message: "deployment"
