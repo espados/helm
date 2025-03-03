@@ -8,7 +8,6 @@ metadata:
     helm.sh/hook-delete-policy: hook-succeeded
 spec:
   backoffLimit: 0
-  ttlSecondsAfterFinished: 30
   template:
     spec:
       containers:
